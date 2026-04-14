@@ -1,0 +1,1 @@
+b1.calculate_interste(10000,5,2)

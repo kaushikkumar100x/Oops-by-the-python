@@ -126,9 +126,21 @@ class BankAccount:
             print(f"current balance is {self.balance}")
         else:
             print("invalid amount")
+            
+        @classmethod
+        def from_string(cls,account_string):
+            account_number,account_holder,balance = account_string.split(",")
+            return cls(account_number,account_holder,int(balance))
+        @staticmethod
+        def calculate_interste(balance ,rate ,time):
+              return balance *rate*time/100
+          
         
 b1 = BankAccount("123456789","kaushik",10000)
 b1.deposit(5000)        
 b1.withdrow(2000)
 print(b1.account_number,b1.account_holder,b1.balance)
+
+# b1.from_string("987654321,rajesh,15000")
+# b1.calculate_interste(10000,5,2)
             
