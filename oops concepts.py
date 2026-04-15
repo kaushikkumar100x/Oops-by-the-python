@@ -141,6 +141,11 @@
 # b1.withdrow(2000)
 # print(b1.account_number,b1.account_holder,b1.balance)
 
+
+
+
+   
+
 #=======================inheritance concepts ========================
 
 #single inheritance : parent -> student
@@ -284,13 +289,39 @@
 #========================Method overriding =====================
 
 
-class parent:
-    def skill(self):
-        print("manual works")
-class child(parent):
-    def skill(self):
-        print("digital works")
+# class parent:
+#     def skill(self):
+#         print("manual works")
+# class child(parent):
+#     def skill(self):
+#         print("digital works")
 
 
-c1 = child()
-c1.skill()
+# c1 = child()
+# c1.skill()
+
+
+
+
+
+
+#==========================duck typing========================
+
+ # =====================birds and kite  by fly() method  duck typing========================
+ 
+class birds:
+     def fly(self):
+         print("birds are fly on the sky")
+class kite:
+    def fly(self):
+        print("kite is flying in the sky:")
+        
+        
+def make_it_fly(obj):
+    obj.fly()
+b = birds()
+k = kite()
+    
+make_it_fly(b)
+make_it_fly(k)
+         
