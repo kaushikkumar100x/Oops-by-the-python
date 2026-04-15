@@ -108,39 +108,189 @@
 # print(b1.Account_number,b1.Account_holder,b1.balance)
 
  #bank Accound Simulation withdrow and deposit
-class BankAccount:
-    def __init__(self,account_number,account_holder,balance):
-         self.account_number = account_number
-         self.account_holder = account_holder
-         self.balance = balance 
-    def deposit(self,amount):
-        self.balance += amount
-        print(f"deposit anount is{amount}")
-        print(f"Current balance is {self.balance}")
-    def withdrow(self,amount):
-        if amount > self.balance:
-            print("insufficient balance")
-        elif amount <= self.balance:
-            self.balance -=amount
-            print(f"withdrow amount{amount}")
-            print(f"current balance is {self.balance}")
-        else:
-            print("invalid amount")
+# class BankAccount:
+#     def __init__(self,account_number,account_holder,balance):
+#          self.account_number = account_number
+#          self.account_holder = account_holder
+#          self.balance = balance 
+#     def deposit(self,amount):
+#         self.balance += amount
+#         print(f"deposit anount is{amount}")
+#         print(f"Current balance is {self.balance}")
+#     def withdrow(self,amount):
+#         if amount > self.balance:
+#             print("insufficient balance")
+#         elif amount <= self.balance:
+#             self.balance -=amount
+#             print(f"withdrow amount{amount}")
+#             print(f"current balance is {self.balance}")
+#         else:
+#             print("invalid amount")
             
-        @classmethod
-        def from_string(cls,account_string):
-            account_number,account_holder,balance = account_string.split(",")
-            return cls(account_number,account_holder,int(balance))
-        @staticmethod
-        def calculate_interste(balance ,rate ,time):
-              return balance *rate*time/100
+#         @classmethod
+#         def from_string(cls,account_string):
+#             account_number,account_holder,balance = account_string.split(",")
+#             return cls(account_number,account_holder,int(balance))
+#         @staticmethod
+#         def calculate_interste(balance ,rate ,time):
+#               return balance *rate*time/100
           
         
-b1 = BankAccount("123456789","kaushik",10000)
-b1.deposit(5000)        
-b1.withdrow(2000)
-print(b1.account_number,b1.account_holder,b1.balance)
+# b1 = BankAccount("123456789","kaushik",10000)
+# b1.deposit(5000)        
+# b1.withdrow(2000)
+# print(b1.account_number,b1.account_holder,b1.balance)
 
-# b1.from_string("987654321,rajesh,15000")
-# b1.calculate_interste(10000,5,2)
+#=======================inheritance concepts ========================
+
+#single inheritance : parent -> student
+
+# class parent:
+#     def skill(self):
+#         print("programing skills")
+# class student(parent):
+#     def hobby(self):
+#         print("reading book")
+        
+# s1 = student()
+# s1.skill()
+# s1.hobby()
+
+    
+            # ========================= multiple  inheritance : Animal-> cat -> dog
             
+            
+# class animal:
+#     def eat(self):
+#         print("its eating the food")
+# class cat:
+#     def mewo(self):
+#         print("cat is mewoing")
+# class dog:
+#     def bow(self):
+#         print("dog is bowing")  
+# class pet(animal,cat,dog):
+#     pass
+
+
+# p1 = pet()
+# p1.eat()
+# p1.mewo()
+# p1.bow()
+
+
+
+
+
+#=================================multilevel inheritance father + mother -> child
+
+
+
+# class grandfather:
+#     def height(self):
+#         print("grandfather is 6 feet tall")
+# class father(grandfather):
+#     def haircolor(self):
+#         print("father has black hair")
+# class son(father):
+#     def eyescolor(self):
+#         print("son has brown eyes")
+        
+        
+# p1 = son()
+# p1.height()
+# p1.eyescolor()
+# p1.haircolor()
+    
+    
+    
+    
+    
+    #=================================hierarchical inheritance father -> son1,son2
+    
+# class father:
+#     def eat(self):
+#         print("eating")
+# class son1(father):
+#     def eyescolor(self):
+#         print("black")
+# class son2(father):
+#     def haircolor(self):
+#         print("Brown")
+        
+        
+        
+# s1 = son1()
+# s2 = son2()
+
+
+# s1.eat()
+# s2.eat()
+# s1.eyescolor()
+# s2.haircolor()
+
+
+
+
+
+
+# ===============================hybrid inheritance father -> son1,son2 -> grandson
+
+
+# class father:
+#     def tall(self):
+#         print("tall")
+# class son1(father):
+#     def haircolor(self):
+#         print("black")  
+# class son2(father):
+#     def eyescolor(self):
+#         print("brown")
+# class grandson(son1,son2):
+#     pass
+
+
+# g1 = grandson()
+# g1.tall()           
+# g1.haircolor()
+# g1.eyescolor()
+
+
+
+
+
+#===================Super function ==============
+
+
+# class animal:
+#     def show(self):
+#         print("eating")
+# class dog(animal):
+#     def show(self):
+#         super().show() # super function is used to call the parent class method
+#         print("barking")
+# class cat(dog):
+#     def show(self):
+#         super().show() # super function is used to call the parent class method
+#         print("walking")
+    
+    
+    
+# c1 = cat() 
+# c1.show()
+
+
+
+#========================Method overriding =====================
+
+
+class parent:
+    def skill(self):
+        print("manual works")
+class child(parent):
+    def skill(self):
+        print("digital works")
+
+
+c1 = child()
+c1.skill()
