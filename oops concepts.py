@@ -309,19 +309,94 @@
 
  # =====================birds and kite  by fly() method  duck typing========================
  
-class birds:
-     def fly(self):
-         print("birds are fly on the sky")
-class kite:
-    def fly(self):
-        print("kite is flying in the sky:")
+# class birds:
+#      def fly(self):
+#          print("birds are fly on the sky")
+# class kite:
+#     def fly(self):
+#         print("kite is flying in the sky:")
         
         
-def make_it_fly(obj):
-    obj.fly()
-b = birds()
-k = kite()
+# def make_it_fly(obj):
+#      obj.fly()
+# b = birds()
+# k = kite()
     
-make_it_fly(b)
-make_it_fly(k)
-         
+# make_it_fly(b)
+# make_it_fly(k)
+
+
+
+#================================multiplie inheritance  program = WAP two parent class as  name of width the display function subject and roll number=================
+
+# class A:
+#     def __init__(self, name , salary):
+#         self.name = name
+#         self.salary = salary
+#     def display(self):
+#         print(f"name is {self.name}")
+#         print(f"salary is {self.salary}")
+#         print("\n")
+
+# s1 = A("kaushik",10000)
+# s1.display()      
+
+
+# class B:
+#     def __init__(self, name , subject , Roll_no):
+#         self.name = name
+#         self.subject = subject
+#         self.Roll_no = Roll_no
+#     def display(self):
+#         print(f"name is {self.name}")
+#         print(f"subject is {self.subject}")
+#         print(f"roll number is {self.Roll_no}")
+
+# s1 = B("kumar","c",102)
+# s1.display()  
+
+# class C(A,B):
+#     # def __init__(self,name,salary,subject,Roll_no):
+#     #     A.__init__(self,name,salary)
+#     #     B.__init__(self,name,subject,Roll_no)   
+    
+  # =============  pass ka bi use kar skate hai =================  
+#     pass
+
+#=================multilevel inhretance ========================
+
+class parent1:
+    def color(self):
+        print("red")
+class parent2(parent1):
+    def height(self):
+        print("6 feet")
+class child(parent2):
+    def weight(self):
+        print("70 kg")
+c1 = child()
+c1.color() 
+c1.height()
+# c1.weight()
+
+
+
+#2nd type of multilevel inheritance
+
+# class parent1:
+#     def __init__(self,hair_color,eyes_color):
+#         self.hair_color = hair_color
+#         self.eyes_color = eyes_color
+# class parent2(parent1):
+#     def __init__(self,hair_color,eyes_color,height):
+#         super().__init__(hair_color,eyes_color)
+#         self.height = height
+# class child(parent2):
+#     def __init__(self,hair_color,eyes_color,height,weight):
+#         super().__init__(hair_color,eyes_color,height)
+#         self.weight = weight
+# c1 = child("black","brown","6 feet","70 kg")
+# print(f"hair color is {c1.hair_color}")             
+# print(f"eyes color is {c1.eyes_color}")
+# print(f"height is {c1.height}")
+# print(f"weight is {c1.weight}")
