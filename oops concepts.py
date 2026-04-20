@@ -365,18 +365,18 @@
 
 #=================multilevel inhretance ========================
 
-class parent1:
-    def color(self):
-        print("red")
-class parent2(parent1):
-    def height(self):
-        print("6 feet")
-class child(parent2):
-    def weight(self):
-        print("70 kg")
-c1 = child()
-c1.color() 
-c1.height()
+# class parent1:
+#     def color(self):
+#         print("red")
+# class parent2(parent1):
+#     def height(self):
+#         print("6 feet")  
+# class child(parent2):
+#     def weight(self):
+#         print("70 kg")
+# c1 = child()
+# c1.color() 
+# c1.height()
 # c1.weight()
 
 
@@ -387,16 +387,39 @@ c1.height()
 #     def __init__(self,hair_color,eyes_color):
 #         self.hair_color = hair_color
 #         self.eyes_color = eyes_color
+#     def display(self):
+#         print(f"hair color is {self.hair_color}")
+#         print(f"eyes color is {self.eyes_color}")
 # class parent2(parent1):
 #     def __init__(self,hair_color,eyes_color,height):
 #         super().__init__(hair_color,eyes_color)
 #         self.height = height
+#     def display(self):
+#         super().display()
+#         print(f"height is {self.height}")
 # class child(parent2):
 #     def __init__(self,hair_color,eyes_color,height,weight):
 #         super().__init__(hair_color,eyes_color,height)
 #         self.weight = weight
+#     def display(self):
+#         super().display()
+#         print(f"weight is {self.weight}")
 # c1 = child("black","brown","6 feet","70 kg")
-# print(f"hair color is {c1.hair_color}")             
-# print(f"eyes color is {c1.eyes_color}")
-# print(f"height is {c1.height}")
-# print(f"weight is {c1.weight}")
+# c1.display()
+
+
+#===============3rd type of multilevel inheritance========================
+
+class A:
+    def __init__(self,hair_color):
+        self.hair_color = hair_color
+class B(A):
+    def __init__(self,hair_color,eyes_color):
+        super().__init__(hair_color)
+        self.eyes_color = eyes_color
+class C(B):
+    pass
+
+c1 = C("black","brown")
+print(f"Hair color is {c1.hair_color}")
+print(f"Eyes color is {c1.eyes_color}")
